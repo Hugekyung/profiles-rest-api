@@ -21,8 +21,8 @@ class UserProfileManager(BaseUserManager):
         return user
 
     def create_superuser(self, email, name, password):
-        """Create and save a new superser with given details"""
-        user = self.create_user(email, name, password)
+        """Create and save a new superuser with given details"""
+        user = self.create_user(email, name=name, password=password)
 
         user.is_superuser = True
         user.is_staff = True
@@ -42,7 +42,7 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
 
     # Username으로 email을 받고, REQURIED_FIELDS로 name을 받는다
     USERNAME_FIELD = 'email'
-    REQURIED_FIELDS = ['name']
+    REQUIRED_FIELDS = ['name']
 
     def get_full_name(self):
         """Retrieve full name of user"""
