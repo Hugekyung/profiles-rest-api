@@ -8,6 +8,7 @@ from profiles_api import views
 router = DefaultRouter()
 router.register('hello-viewset', views.HelloViewSet, basename='hello-viewset')
 # base_name는 restframework 최신버전에서 basename으로 바뀌었다
+router.register('profile', views.UserProfileViewSet)
 
 
 urlpatterns =[
