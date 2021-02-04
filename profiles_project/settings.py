@@ -25,7 +25,7 @@ SECRET_KEY = '5!e6u#z&o5y=0refo@xyz_gqx0nx(!*=@$fo35fy0(v3(3n7-x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(int(os.environ.get('DEBUG', 1))) # 서버가 동작 중일때는 DEBUG 모드를 False로 한다
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ec2-13-125-205-82.ap-northeast-2.compute.amazonaws.com', '127.0.0.1']
 
 
 # Application definition
