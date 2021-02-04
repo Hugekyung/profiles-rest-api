@@ -122,7 +122,7 @@ class UserProfileFeedViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.ProfileFeedItemSerializer
     queryset = models.ProfileFeedItem.objects.all()
     permission_classes = (
-        permissions.UpdateOwnStatus, IsAuthenticated) # 로그인하지 않으면 읽는 것만 가능(OrReadOnly), IsAuthenticated는 본인만이 본인의 feed를 확인할 수 있다
+        permissions.UpdateOwnStatus, IsAuthenticated) # 로그인하지 않으면 읽는 것만 가능(OrReadOnly), IsAuthenticated는 로그인해야 모든 feed를 확인할 수 있다(로그인 안하면 아무것도 볼 수 없음)
 
     def perform_create(self, serializer):
         """Sets the user profile to the logged in user"""
